@@ -1,0 +1,41 @@
+.main-india {
+  margin: 75px 25px 0;
+}
+
+.main-india .head {
+  display: flex;
+  align-items: center;
+}
+
+.india-status {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.india-status div {
+  margin-bottom: 20px;
+  margin-right: 15px;
+  text-align: center;
+  max-width: 150px;
+  border-radius: 10px;
+  display: flex;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+.confirm {
+  background-color: #eb2502;
+}
+
+.active {
+  background-color: #00a3ff;
+}
+.recover {
+  background-color: #07df07;
+}
+.death {
+  background-color: #000;
+}

@@ -1,0 +1,39 @@
+.state-head {
+  padding: 10px;
+  background-color: #000;
+}
+.state-head div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.state-head h3 {
+  color: #00a3ff;
+  text-align: center;
+}
+.state-head span {
+  color: #fff;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.table {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead tr {
+  background-color: rgb(0, 0, 0);
+  color: #00a3ff;
+}
+td,
+th {
+  padding: 25px;
+}
+tbody tr {
+  background-color: #0a0a0a;
+  color: #00a3ff;
+}

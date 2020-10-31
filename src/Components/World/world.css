@@ -1,0 +1,8 @@
+.world {
+  margin: 75px 25px 0;
+  position: relative;
+}
+.world table {
+    border-collapse: collapse;
+    width: 100%;
+}

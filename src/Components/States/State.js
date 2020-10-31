@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./state.css";
 export default class State extends Component {
   state = {
     stateData: {},
@@ -26,52 +26,49 @@ export default class State extends Component {
       for (let x in districts) {
         total_active += districts[x].active;
         total_confirmed += districts[x].confirmed;
-        total_active += districts[x].deceased;
-        total_active += districts[x].recovered;
+        total_death += districts[x].deceased;
+        total_recovered += districts[x].recovered;
         let ob = districts[x];
         ob["district_name"] = x;
         district_list = [...district_list, ob];
       }
-      if (key === 0) {
-        return false;
-      }
       return (
-        <div key={key}>
-          <h3>
-            {item}{" "}
-            <span style={{ marginRight: "10px" }}>
-              Confirmed: {total_confirmed}
-            </span>
-            <span style={{ marginRight: "10px" }}>Active : {total_active}</span>
-            <span style={{ marginRight: "10px" }}>
-              Recovered: {total_recovered}
-            </span>
-            <span style={{ marginRight: "10px" }}>Death: {total_death}</span>
-          </h3>
-          <table>
-            <thead>
-              <tr>
-                <th>District</th>
-                <th>Confirmed</th>
-                <th>Active</th>
-                <th>Recovered</th>
-                <th>Deaths</th>
-              </tr>
-            </thead>
-            <tbody>
-              {district_list.map((item, key) => {
-                return (
-                  <tr key={key}>
-                    <td>{item.district_name}</td>
-                    <td>{item.confirmed}</td>
-                    <td>{item.active}</td>
-                    <td>{item.recovered}</td>
-                    <td>{item.deceased}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+        <div key={key} className="state">
+          <div className="state-head">
+            <div>
+              <h3>{item}</h3>
+              <span className="confirm">Confirmed: {total_confirmed}</span>
+              <span className="active">Active : {total_active}</span>
+              <span className="recover">Recovered: {total_recovered}</span>
+              <span className="death">Death: {total_death}</span>
+            </div>
+          </div>
+          <div className="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>District</th>
+                  <th>Confirmed</th>
+                  <th>Active</th>
+                  <th>Recovered</th>
+                  <th>Deaths</th>
+                </tr>
+              </thead>
+              <tbody>
+                {district_list.map((item, key) => {
+                  return (
+                    <tr key={key}>
+                      <td>{item.district_name}</td>
+                      <td>{item.confirmed}</td>
+                      <td>{item.active}</td>
+                      <td>{item.recovered}</td>
+                      <td>{item.deceased}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       );
     });
